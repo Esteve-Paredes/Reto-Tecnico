@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap");
+* {
+  font-family: "Familjen Grotesk";
+}
+.containerApp {
+  display: flex;
+  justify-content: center;
+}

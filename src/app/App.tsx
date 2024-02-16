@@ -1,6 +1,6 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import "./App.css";
 import { useEffect } from "react";
+import styles from "./styles.module.css";
 
 function App() {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function App() {
   }, [location]);
 
   return (
-    <div>
+    <div className={styles.containerApp}>
       <Outlet />
     </div>
   );

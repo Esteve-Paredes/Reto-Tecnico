@@ -2,6 +2,7 @@ import { useState } from "react";
 import { DataPerson } from "../Form";
 import { fetchPost } from "../../utils/functions-fetch";
 import { URL } from "../../utils/variables";
+import styles from "./styles.module.css";
 
 function UserError({ user }: { user: DataPerson }) {
   const userData = {
@@ -31,6 +32,7 @@ function UserError({ user }: { user: DataPerson }) {
       <td>{user.row}</td>
       <td>
         <input
+          className={styles.input}
           type="text"
           name="name"
           disabled={response}
@@ -40,6 +42,7 @@ function UserError({ user }: { user: DataPerson }) {
       </td>
       <td>
         <input
+          className={styles.input}
           type="text"
           name="email"
           disabled={response}
@@ -49,6 +52,7 @@ function UserError({ user }: { user: DataPerson }) {
       </td>
       <td>
         <input
+          className={styles.input}
           type="text"
           name="age"
           disabled={response}
@@ -57,7 +61,10 @@ function UserError({ user }: { user: DataPerson }) {
         />
       </td>
       <td>
-        <button onClick={handleClick} disabled={response}>
+        <button
+          className={styles.button}
+          onClick={handleClick}
+          disabled={response}>
           Retry
         </button>
       </td>

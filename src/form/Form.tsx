@@ -42,7 +42,6 @@ function Form() {
       fetchData();
     }
   };
-  console.log(responseData);
 
   const updateFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
@@ -56,7 +55,7 @@ function Form() {
         style={{ display: responseData ? "none" : "flex" }}
         onSubmit={handleSubmit}>
         <input type="file" onChange={updateFile} />
-        <button>Update File</button>
+        <button className={styles.button}>Update File</button>
       </form>
       <div
         className={styles.containerBody}
@@ -66,7 +65,7 @@ function Form() {
             {responseData ? responseData.data.success.length : "0"} Records
             uploades successfully
           </div>
-          <button>New File</button>
+          <button className={styles.button}>New File</button>
         </div>
         <div className={styles.containerErrors}>
           <p className={styles.errorsMessage}>

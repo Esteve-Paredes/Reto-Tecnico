@@ -1,0 +1,38 @@
+.input {
+  display: flex;
+  height: 16px;
+  padding: 8px 8px;
+  border-radius: 6px;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+}
+
+.button {
+  display: flex;
+  width: 60px;
+  height: 30px;
+  padding: 8px 8px;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  border-radius: 6px;
+  background: #282bd9;
+
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.button:hover {
+  background: rgb(54, 88, 183);
+}
+
+.button:active {
+  background: rgb(33, 43, 182);
+}
+
+.button:disabled {
+  background-color: rgb(167, 186, 237);
+}
