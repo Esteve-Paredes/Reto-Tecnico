@@ -28,18 +28,19 @@ function Form() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("data-table", dataFile);
+    if (dataFile) {
+      formData.append("data-table", dataFile);
+      const fetchData = async () => {
+        try {
+          const response = await fetchPost(URL, "/", formData);
+          setResponseData(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
 
-    const fetchData = async () => {
-      try {
-        const response = await fetchPost(URL, "/", formData);
-        setResponseData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
+      fetchData();
+    }
   };
   console.log(responseData);
 
@@ -50,11 +51,16 @@ function Form() {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        className={styles.form}
+        style={{ display: responseData ? "none" : "flex" }}
+        onSubmit={handleSubmit}>
         <input type="file" onChange={updateFile} />
         <button>Update File</button>
       </form>
-      <div className={styles.containerBody}>
+      <div
+        className={styles.containerBody}
+        style={{ display: responseData ? "flex" : "none" }}>
         <div className={styles.containerMessage}>
           <div className={styles.successMessage}>
             {responseData ? responseData.data.success.length : "0"} Records
@@ -63,9 +69,10 @@ function Form() {
           <button>New File</button>
         </div>
         <div className={styles.containerErrors}>
-          <p>
-            The record listed below encountred errors. Please rectify these
-            issues and retry.
+          <p className={styles.errorsMessage}>
+            The ({responseData ? responseData.data.errors.length : "0"}) record
+            listed below encountred errors. Please rectify these issues and
+            retry.
           </p>
           <table>
             <thead>
