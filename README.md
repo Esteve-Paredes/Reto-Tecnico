@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Aplicación de Gestión de Archivos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Esta es una aplicación web que permite a los usuarios autenticarse, enviar archivos al servidor y recibir una respuesta con los datos procesados. Los archivos enviados son leídos por el servidor y se devuelve un objeto que la aplicación frontend puede utilizar para separar los registros exitosos de los erróneos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## Expanding the ESLint configuration
+- **Autenticación de usuarios**: Los usuarios pueden iniciar sesión para acceder a las funcionalidades de la aplicación.
+- **Envío de archivos**: Los usuarios con el rol "admin" pueden enviar archivos al servidor una vez que han iniciado sesión.
+- **Procesamiento de archivos**: El servidor lee los archivos enviados y devuelve un objeto con los datos procesados.
+- **Visualización de datos**: La aplicación frontend separa y muestra los registros exitosos y erróneos basándose en la respuesta del servidor.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalación
 
-- Configure the top-level `parserOptions` property like this:
+## Clonar el repositorio
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+git clone https://github.com/Esteve-Paredes/Reto-Tecnico
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Cambiar al directorio del repositorio
+
+cd Reto-Tecnico
+
+## Instalar todas las dependencias
+
+npm install
