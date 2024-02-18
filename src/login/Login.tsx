@@ -25,7 +25,7 @@ function Login() {
       navigate("/");
     } else {
       serValidCredentials(true);
-      console.error("usuario no encontrado");
+      console.error("Usuario no encontrado");
     }
   };
 
