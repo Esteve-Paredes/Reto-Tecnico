@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchPost } from "../utils/functions-fetch";
+import { PostData } from "../utils/functions-fetch";
 import { URL } from "../utils/variables";
 import styles from "./styles.module.css";
 import UserError from "./user-error/UserError";
@@ -32,7 +32,7 @@ function Form() {
       formData.append("data-table", dataFile);
       const fetchData = async () => {
         try {
-          const response = await fetchPost(URL, "/", formData);
+          const response = await PostData(URL, "/", formData);
           setResponseData(response.data);
         } catch (error) {
           console.log(error);

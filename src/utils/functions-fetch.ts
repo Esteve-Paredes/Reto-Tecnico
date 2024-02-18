@@ -9,7 +9,7 @@ type Response = {
   statusText: string;
 };
 
-export const fetchPost = async (
+export const PostData = async (
   url: string,
   endPoint: string,
   data: object

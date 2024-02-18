@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DataPerson } from "../Form";
-import { fetchPost } from "../../utils/functions-fetch";
+import { PostData } from "../../utils/functions-fetch";
 import { URL } from "../../utils/variables";
 import styles from "./styles.module.css";
 
@@ -20,7 +20,7 @@ function UserError({ user }: { user: DataPerson }) {
 
   const handleClick = async () => {
     try {
-      const response = await fetchPost(URL, "/", data);
+      const response = await PostData(URL, "/", data);
       setResponse(response.data.ok);
     } catch (error) {
       console.log(error);

@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { fetchPost } from "../utils/functions-fetch";
+import { PostData } from "../utils/functions-fetch";
 import { URL } from "../utils/variables";
 
 const initialFormData = {
@@ -18,7 +18,7 @@ function Login() {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const response = await fetchPost(URL, "/login", formData);
+    const response = await PostData(URL, "/login", formData);
 
     if (response.data?.ok === true) {
       localStorage.setItem("user", JSON.stringify(response?.data.data));
